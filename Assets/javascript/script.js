@@ -1,35 +1,42 @@
 // Assignment code here
 
-//Password
-function generatePassword() {
-  console.log ("Click to create password");
-  let pass = "";
-}
-
-//Prompts
-var passwordLength = window.prompt ("Password Length");
-console.log (passwordLength);
-
-var lowercase = window.prompt("Would you like to have lowercase letters?");
-console.log(lowercase);
-
-var uppercase = window.prompt("Would you like to have upppercase letters?");
-console.log(uppercase);
-
-var numbers = window.prompt("Would you like to add numbers?")
-console.log(numbers);
-
-var characters = window.prompt("Would you like to add specialcharacters?")
-console.log(characters);
-
-//Variables
-var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split("");
-var lowercaseletters = "abcdefghijklmnopqrstuvwxyz ".split("");
-var numbers = "0123456789 ".split("");
-var characters = "!@#$%^&*+=?/;: ".split("");
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+//Password Console.log
+function generatePassword() {
+  console.log ("Click to create password");
+  
+//Prompts for the User/Length of the password
+let passwordLength = window.prompt ("Password Length");
+console.log (passwordLength);
+
+let lowercase = window.prompt("Would you like to have lowercase letters?");
+console.log(lowercase);
+
+let uppercase = window.prompt("Would you like to have upppercase letters?");
+console.log(uppercase);
+
+let number = window.prompt("Would you like to add numbers?")
+console.log(number);
+
+let characters = window.prompt("Would you like to add characters?")
+console.log(characters);
+  
+//Variables
+var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+var lowercaseletters = "abcdefghijklmnopqrstuvwxyz ";
+var numbers = "0123456789";
+var character = "!@#$%^&*+=?/";
+
+//Arrays
+var arrayuppercaseletters = uppercaseletters.split("");
+var arraylowercaseletters = lowercaseletters.split("");
+var arraynumbers = numbers.split("");
+var arraycharacter = character.split("");  
+  
+  return;
+}
 
 // Write password to the #password input
 function writePassword() {
