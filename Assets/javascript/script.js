@@ -9,19 +9,19 @@ function generatePassword() {
   
 //Prompts for the User/Length of the password
 let passwordLength = window.prompt ("Password Length");
-console.log (passwordLength);
+console.log ('passwordLength');
 
 let lowercase = window.prompt("Would you like to have lowercase letters?");
-console.log(lowercase);
+console.log('lowercase selected');
 
 let uppercase = window.prompt("Would you like to have upppercase letters?");
-console.log(uppercase);
+console.log('uppercase selected');
 
 let number = window.prompt("Would you like to add numbers?")
-console.log(number);
+console.log('number selected');
 
 let characters = window.prompt("Would you like to add characters?")
-console.log(characters);
+console.log('characters selected');
   
 //Variables
 var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
@@ -30,11 +30,10 @@ var numbers = "0123456789";
 var character = "!@#$%^&*+=?/";
 
 //Arrays
-var arrayuppercaseletters = uppercaseletters.split("");
-var arraylowercaseletters = lowercaseletters.split("");
-var arraynumbers = numbers.split("");
-var arraycharacter = character.split("");  
-  
+var uppercaseletters = uppercaseletters.split("");
+var lowercaseletters = lowercaseletters.split("");
+var numbers = numbers.split("");
+var character = character.split("");  
   return;
 }
 
@@ -44,7 +43,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
