@@ -1,40 +1,61 @@
-// Assignment code here
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 //Password Console.log
 function generatePassword() {
-  console.log ("Click to create password");
-  
-//Prompts for the User/Length of the password
-let passwordLength = window.prompt ("Password Length");
-console.log ('passwordLength');
+  console.log("Click to create password");
 
-let lowercase = window.prompt("Would you like to have lowercase letters?");
-console.log('lowercase selected');
+  //Prompts for the User/Length of the password
+  let passwordLength = window.prompt("Password Length");
+  console.log(passwordLength);
 
-let uppercase = window.prompt("Would you like to have upppercase letters?");
-console.log('uppercase selected');
+  let lowercase = window.prompt("Would you like to have lowercase letters?");
+  console.log("lowercase selected: " + lowercase);
 
-let number = window.prompt("Would you like to add numbers?")
-console.log('number selected');
+  let uppercase = window.prompt("Would you like to have uppercase letters?");
+  console.log("uppercase selected: " + uppercase);
 
-let characters = window.prompt("Would you like to add characters?")
-console.log('characters selected');
-  
-//Variables
-var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-var lowercaseletters = "abcdefghijklmnopqrstuvwxyz ";
-var numbers = "0123456789";
-var character = "!@#$%^&*+=?/";
+  let number = window.prompt("Would you like to add numbers?");
+  console.log("number selected: " + numbers);
 
-//Arrays
-var uppercaseletters = uppercaseletters.split("");
-var lowercaseletters = lowercaseletters.split("");
-var numbers = numbers.split("");
-var character = character.split("");  
-  return;
+  let characters = window.prompt("Would you like to add characters?");
+  console.log("characters selected: " + characters);
+
+  // Variables
+  var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+  var numbers = "0123456789";
+  var possibleCharacters = "!@#$%^&*+=?/";
+  var possibleCharacters = "";
+
+  // Check what the user selected and add to possibleCharacters
+  if (lowercase === "yes") {
+    possibleCharacters += lowercaseLetters;
+  }
+  if (uppercase === "yes") {
+    possibleCharacters += uppercaseLetters;
+  }
+  if (numbers === "yes") {
+    possibleCharacters += numbers;
+  }
+  if (characters === "yes") {
+    possibleCharacters += characters;
+  }
+
+  // If possibleCharacters is still an empty string, return an error message
+  if (possibleCharacters === "") {
+    return "Error: Please select at least one character type";
+  }
+
+  // Generate the password
+  var password = "";
+  for (var i = 0; i < passwordLength; i++) {
+    password += possibleCharacters.charAt(
+      Math.floor(Math.random() * possibleCharacters.length)
+    );
+  }
+
+  return password;
 }
 
 // Write password to the #password input
