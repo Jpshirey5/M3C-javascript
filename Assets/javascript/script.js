@@ -16,7 +16,7 @@ function generatePassword() {
   console.log("uppercase selected: " + uppercase);
 
   let number = window.prompt("Would you like to add numbers?");
-  console.log("number selected: " + numbers);
+  console.log("number selected: " + numberString);
 
   let characters = window.prompt("Would you like to add characters?");
   console.log("characters selected: " + characters);
@@ -24,9 +24,8 @@ function generatePassword() {
   // Variables
   var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-  var numbers = "0123456789";
+  var numberString = "0123456789";
   var possibleCharacters = "!@#$%^&*+=?/";
-  var possibleCharacters = "";
 
   // Check what the user selected and add to possibleCharacters
   if (lowercase === "yes") {
@@ -35,8 +34,8 @@ function generatePassword() {
   if (uppercase === "yes") {
     possibleCharacters += uppercaseLetters;
   }
-  if (numbers === "yes") {
-    possibleCharacters += numbers;
+  if (number === "yes") {
+    possibleCharacters += numberString;
   }
   if (characters === "yes") {
     possibleCharacters += characters;
